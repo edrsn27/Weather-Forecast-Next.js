@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 // get auth token from local storage
 import { auth } from "../firebase-config";
 // initialize github auth provider
-import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 // set github auth provider
 const provider = new GithubAuthProvider();
 // create context
@@ -19,6 +19,10 @@ export default function AuthProvider({ children }) {
   const signin = () => {
     return signInWithPopup(auth, provider);
   };
+  // function for sign out
+  const signout = () => {
+    return signOut(auth, provider);
+  };
 
   useEffect(() => {
     // check if user is signed in
@@ -31,6 +35,7 @@ export default function AuthProvider({ children }) {
       // set current user
       setCurrentUser(user);
       setLoading(false);
+    
     });
 
     return unsubscribe;
@@ -40,6 +45,7 @@ export default function AuthProvider({ children }) {
     currentUser,
     loading,
     signin,
+    signout,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
