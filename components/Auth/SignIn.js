@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 
-import Image from "next/image";
-
 export default function SignIn() {
   return (
     <Card border="light">
