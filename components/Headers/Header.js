@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <Navbar bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="#home">Weather Forecast</Navbar.Brand>
       
       </Container>
     </Navbar>
