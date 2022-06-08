@@ -7,9 +7,8 @@ export default function SignIn() {
   // use signIn function from context
   const { currentUser } = useAuth();
 
-
   return (
-    <Card border="light">
+    <Card border="0" className="text-center">
       <Card.Body>
         <Card.Text>{currentUser && currentUser.gitHubUrl}</Card.Text>
       </Card.Body>
