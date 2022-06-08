@@ -1,7 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import AuthLayout from "../layouts/Auth";
 export default function Index() {
   return (
-    <div>index</div>
-  )
+    <AuthLayout>
+      <div>index</div>
+    </AuthLayout>
+  );
 }
