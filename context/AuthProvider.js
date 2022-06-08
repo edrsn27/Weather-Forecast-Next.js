@@ -26,16 +26,17 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     // check if user is signed in
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
-        user.getIdTokenResult().then((idTokenResult) => {
-          user.admin = idTokenResult.claims.admin;
-        });
+        const res = await fetch(
+          `https://api.github.com/user/${user.providerData[0].uid}`
+        );
+        const data = await res.json();
+        user.gitHubUrl = data.html_url;
       }
       // set current user
       setCurrentUser(user);
       setLoading(false);
-    
     });
 
     return unsubscribe;
