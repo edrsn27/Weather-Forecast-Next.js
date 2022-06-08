@@ -11,6 +11,10 @@ export default function SignIn() {
           Welcome to weather forecast web application. Please login with your
           Github user to use the application and view the weather in your city.
         </Card.Text>
+
+        <Button>
+          <i className="fa fa-github" aria-hidden="true"></i> Github
+        </Button>
       </Card.Body>
     </Card>
   );
