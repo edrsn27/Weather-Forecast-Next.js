@@ -12,10 +12,11 @@ export default function CityDisplayInput() {
     setLoading(true);
     try {
       const query = await getWeather();
-      if (query.cod === "401") {
+      if (query.cod === 200) {
         router.push("/weather");
       } else {
-        alert(query.message);
+          console.log(query)
+        alert(query);
       }
     } catch (error) {
       alert(error.message);
