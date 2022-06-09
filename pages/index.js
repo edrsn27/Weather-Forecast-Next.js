@@ -13,7 +13,7 @@ export default function Index() {
     <AuthLayout>
       <Container
         className="h-100 d-flex align-items-center justify-content-center"
-        style={{ minHeight: "200px" }}
+        style={{ minHeight: "300px" }}
       >
         <div className="w-100 " style={{ maxWidth: "700px" }}>
           <SignIn />

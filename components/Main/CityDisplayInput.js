@@ -1,22 +1,21 @@
 import { useState } from "react";
 import { Card, Form, Col, InputGroup, Button } from "react-bootstrap";
+import { useQuery } from "../../context/WeatherProvider";
+import { useRouter } from "next/router";
 export default function CityDisplayInput() {
-  const [city, setCity] = useState("");
-  const [loading, setLoading] = useState("");
+  const { getWeather, setLoading, loading, city, setCity } = useQuery();
+
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_OPEN_WEATHER_MAP_API_URL}?q=${city}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_MAP_API_KEY}`
-      );
-      const data = await res.json();
-      console.log(data)
+      const query = await getWeather();
+      router.push("/weather");
     } catch (error) {
       console.log(error);
     }
-
     setLoading(false);
   };
   return (
