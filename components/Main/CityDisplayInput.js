@@ -12,9 +12,13 @@ export default function CityDisplayInput() {
     setLoading(true);
     try {
       const query = await getWeather();
-      router.push("/weather");
+      if (query.cod === "401") {
+        router.push("/weather");
+      } else {
+        alert(query.message);
+      }
     } catch (error) {
-      console.log(error);
+      alert(error.message);
     }
     setLoading(false);
   };

@@ -11,7 +11,7 @@ export default function Header() {
     try {
       await signout(provider);
     } catch (error) {
-      console.log(error);
+        alert(error.message)
     }
   };
   return (

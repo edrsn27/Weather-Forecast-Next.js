@@ -10,7 +10,7 @@ export default function SignIn() {
     try {
       await signin(provider);
     } catch (error) {
-      console.log(error);
+      alert(error.message)
     }
   };
 
