@@ -8,7 +8,7 @@ export default function SignIn() {
   const { currentUser } = useAuth();
 
   return (
-    <Card border="0" className="text-center">
+    <Card border="0" className="text-center d-none d-lg-block">
       <Card.Body>
         <Card.Text>{currentUser && currentUser.gitHubUrl}</Card.Text>
       </Card.Body>
