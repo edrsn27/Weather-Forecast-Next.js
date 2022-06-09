@@ -7,7 +7,7 @@ export const useQuery = () => {
   return useContext(WeatherContext);
 };
 
-export default function AuthProvider({ children }) {
+export default function WeatherProvider({ children }) {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
   const [loading, setLoading] = useState(false);
