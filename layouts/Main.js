@@ -1,15 +1,17 @@
-import React,{useEffect} from "react";
-import Header from "../components/Headers/Header";
+import React, { useEffect } from "react";
+import Header from "../components/Headers/HomeHeader";
 import { useRouter } from "next/router";
 import { useAuth } from "../context/AuthProvider";
 
 export default function Auth({ children }) {
-  const { currentUser, loading } = useAuth();
   const router = useRouter();
+  const { currentUser, loading } = useAuth();
+
   useEffect(() => {
-    if (!loading && currentUser) router.push("/home");
+    if (!loading && !currentUser) router.push("/");
   }, [currentUser, loading]);
-  if (!currentUser && !loading)
+  if (!currentUser) return "loading...";
+  if (currentUser)
     return (
       <div>
         <Header />
