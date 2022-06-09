@@ -6,9 +6,9 @@ export default function SignIn() {
   // use signIn function from context
   const { signin } = useAuth();
 
-  const handleSignIn = async () => {
+  const handleSignIn = async (provider) => {
     try {
-      await signin();
+      await signin(provider);
     } catch (error) {
       console.log(error);
     }
@@ -22,8 +22,12 @@ export default function SignIn() {
           Github user to use the application and view the weather in your city.
         </Card.Text>
 
-        <Button onClick={handleSignIn}>
+        <Button onClick={()=>handleSignIn("github")}>
           <i className="fa fa-github" aria-hidden="true"></i> Github
+        </Button>
+        <br />
+        <Button onClick={()=>handleSignIn("google")}  variant="warning" className="mt-4">
+          <i className="fa fa-google" aria-hidden="true"></i> Google
         </Button>
       </Card.Body>
     </Card>
