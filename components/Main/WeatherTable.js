@@ -23,7 +23,7 @@ export default function WeatherTable() {
         <tr>
           <th>Date</th>
           <th>Temp (F)</th>
-          <th>Description</th>
+          <th className="d-sm-none d-md-block">Description</th>
           <th>Main</th>
           <th>Pressure</th>
           <th>Humidity</th>
