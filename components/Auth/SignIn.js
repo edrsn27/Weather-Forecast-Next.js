@@ -10,9 +10,14 @@ export default function SignIn() {
     try {
       await signin(provider);
     } catch (error) {
-      alert(error.message)
+      alert(error.message);
     }
   };
+
+  const buttons = [
+    { provider: "github", icon: "github", variant: "primary", name: "Github" },
+    { provider: "google", icon: "google", variant: "warning", name: "Google" },
+  ];
 
   return (
     <Card border="light">
@@ -22,14 +27,17 @@ export default function SignIn() {
           Welcome to weather forecast web application. Please login with your
           Github user to use the application and view the weather in your city.
         </Card.Text>
-
-        <Button onClick={()=>handleSignIn("github")}>
-          <i className="fa fa-github" aria-hidden="true"></i> Github
-        </Button>
-        <br />
-        <Button onClick={()=>handleSignIn("google")}  variant="warning" className="mt-4">
-          <i className="fa fa-google" aria-hidden="true"></i> Google
-        </Button>
+        {buttons.map((button) => (
+          <div className="mt-4">
+            <Button
+              onClick={() => handleSignIn(button.provider)}
+              variant={button.variant}
+            >
+              <i className={"fa fa-" + button.icon} aria-hidden="true"></i>{" "}
+              {button.name}
+            </Button>
+          </div>
+        ))}
       </Card.Body>
     </Card>
   );
