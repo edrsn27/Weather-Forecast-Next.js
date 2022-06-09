@@ -23,7 +23,7 @@ export default function Header() {
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             {currentUser && (
-              <a href="#signout" onClick={handleSignOut}>
+              <a href="#" onClick={handleSignOut}>
                 Signout
               </a>
             )}
