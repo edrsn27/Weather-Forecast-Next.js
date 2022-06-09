@@ -1,13 +1,10 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import MainLayout from "../layouts/Main";
 
-import UserProfile from "../components/Main/UserProfile";
-import CityDisplayInput from "../components/Main/CityDisplayInput";
-
+import WeatherTable from "../components/Main/WeatherTable";
+import { Container } from "react-bootstrap";
 
 export default function Index() {
- 
   return (
     <MainLayout>
       <Container
@@ -15,8 +12,7 @@ export default function Index() {
         style={{ minHeight: "300px" }}
       >
         <div className="w-100 " style={{ maxWidth: "700px" }}>
-          <UserProfile />
-          <CityDisplayInput />
+          <WeatherTable />
         </div>
       </Container>
     </MainLayout>
