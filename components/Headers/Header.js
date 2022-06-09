@@ -6,9 +6,10 @@ export default function Header() {
   // use signIn function from context
   const { signout, currentUser } = useAuth();
 
-  const handleSignOut = async () => {
+  const handleSignOut = async (provider) => {
+      
     try {
-      await signout();
+      await signout(provider);
     } catch (error) {
       console.log(error);
     }
@@ -23,7 +24,7 @@ export default function Header() {
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             {currentUser && (
-              <a href="#" onClick={handleSignOut}>
+              <a href="#" onClick={()=>handleSignOut(currentUser.providerData[0].providerId)}>
                 Signout
               </a>
             )}
