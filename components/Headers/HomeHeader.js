@@ -20,7 +20,7 @@ export default function Header() {
     <Navbar bg="primary" variant="dark">
       <Container>
         <Navbar.Brand href="#">
-          <i class="fa fa-cloud fa-2x" aria-hidden="true"></i>
+          <i className="fa fa-cloud fa-2x" aria-hidden="true"></i>
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
