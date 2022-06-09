@@ -27,8 +27,8 @@ export default function SignIn() {
           Welcome to weather forecast web application. Please login with your
           Github user to use the application and view the weather in your city.
         </Card.Text>
-        {buttons.map((button) => (
-          <div className="mt-4">
+        {buttons.map((button,index) => (
+          <div className="mt-4" key={index}>
             <Button
               onClick={() => handleSignIn(button.provider)}
               variant={button.variant}

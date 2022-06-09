@@ -6,10 +6,11 @@ import { useAuth } from "../context/AuthProvider";
 export default function Auth({ children }) {
   const router = useRouter();
   const { currentUser, loading } = useAuth();
-
+  // protect the page from unauthorized users
   useEffect(() => {
     if (!loading && !currentUser) router.push("/");
   }, [currentUser, loading]);
+
   if (!currentUser) return "loading...";
   if (currentUser)
     return (
