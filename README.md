@@ -48,8 +48,9 @@ _Instructions on how to run the client._
     2. Settings -> Developer Settings
     3. Click New Github App 
     4. Fill all Required Fields
-    5. Callback URL can be found here ![](https://console.firebase.google.com/u/0/project/test-19849/storage/test-19849.appspot.com/files)
-4. ### Create account in [openweathermap](https://home.openweathermap.org/users/sign_up)
+    5. Callback URL can be found here ![](https://firebasestorage.googleapis.com/v0/b/test-19849.appspot.com/o/github-call-back-url.PNG?alt=media&token=e5ec93d3-d1f2-4d1a-b4ce-b48b262731dc)
+
+5. ### Create account in [openweathermap](https://home.openweathermap.org/users/sign_up)
     1. Paste your API in `.env` in variable `NEXT_PUBLIC_OPEN_WEATHER_MAP_API_KEY` 
     2. Assign value for `NEXT_PUBLIC_OPEN_WEATHER_MAP_API_URL` in `.env` for example `https://api.openweathermap.org/data/2.5/weather`
 
