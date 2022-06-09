@@ -17,6 +17,7 @@ export default function SignIn() {
   return (
     <Card border="light">
       <Card.Body>
+        <Card.Text>Hello, World!</Card.Text>
         <Card.Text>
           Welcome to weather forecast web application. Please login with your
           Github user to use the application and view the weather in your city.

@@ -6,6 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     // AuthProvider is the context provider for the application allow to access values from the context
     <AuthProvider>
+      {/* WeatherProvider is the context provider for the application allow to access values from the context */}
       <WeatherProvider>
         <Component {...pageProps} />
       </WeatherProvider>

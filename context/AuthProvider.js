@@ -59,7 +59,7 @@ export default function AuthProvider({ children }) {
 
     return unsubscribe;
   }, []);
-
+  //  values to be exported
   const value = {
     currentUser,
     loading,

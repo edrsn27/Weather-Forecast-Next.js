@@ -1,14 +1,12 @@
 import React from "react";
 import AuthLayout from "../layouts/Auth";
-import SignIn from "../components/Auth/SignIn";
-import UserProfile from "../components/Main/UserProfile";
-import CityDisplayInput from "../components/Main/CityDisplayInput";
-import { Container } from "react-bootstrap";
-import { useAuth } from "../context/AuthProvider";
-export default function Index() {
-  const { currentUser, loading } = useAuth();
 
-  if (loading) return <div>Loading...</div>;
+import SignIn from "../components/Auth/SignIn";
+
+import { Container } from "react-bootstrap";
+
+export default function Index() {
+ 
   return (
     <AuthLayout>
       <Container
