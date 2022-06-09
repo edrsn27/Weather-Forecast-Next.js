@@ -16,7 +16,9 @@ export default function Header() {
   return (
     <Navbar bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Weather Forecast</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <i class="fa fa-cloud fa-2x" aria-hidden="true"></i>
+        </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
