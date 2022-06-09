@@ -18,15 +18,15 @@ export default function WeatherTable() {
   }
 
   return (
-    <Table>
+    <Table className="hidden-phone">
       <thead>
         <tr>
           <th>Date</th>
           <th>Temp (F)</th>
-          <th>Description</th>
-          <th>Main</th>
-          <th>Pressure</th>
-          <th>Humidity</th>
+          <th className="d-none d-lg-table-cell">Description</th>
+          <th className="d-none d-lg-table-cell">Main</th>
+          <th className="d-none d-lg-table-cell">Pressure</th>
+          <th className="d-none d-lg-table-cell">Humidity</th>
         </tr>
       </thead>
       <tbody>
@@ -34,11 +34,14 @@ export default function WeatherTable() {
           <tr>
             <td>{getFormattedDate(new Date())}</td>
             <td>{weather.main.temp}</td>
-            <td>{weather.weather[0].description}</td>
-            <td>{weather.weather[0].main}</td>
-            <td>{weather.main.pressure}</td>
-            <td>{weather.main.humidity}</td>
-         
+            <td className="d-none d-lg-table-cell">
+              {weather.weather[0].description}
+            </td>
+            <td className="d-none d-lg-table-cell">
+              {weather.weather[0].main}
+            </td>
+            <td className="d-none d-lg-table-cell">{weather.main.pressure}</td>
+            <td className="d-none d-lg-table-cell">{weather.main.humidity}</td>
           </tr>
         )}
       </tbody>
